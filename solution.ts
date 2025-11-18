@@ -26,6 +26,7 @@ const getLength: Length<string | (number | string)[]> = (a) => {
 }
 
 
+
 class Person {
     name: string;
     age: number;
@@ -38,6 +39,8 @@ class Person {
         return `'Name: ${this.name}, Age: ${this.age}'`
     }
 }
+
+
 
 
 interface Data{
@@ -56,6 +59,8 @@ const filterByRating: FilterFunction = (data) => {
         return []
     }
 }
+
+
 
 
 
@@ -80,6 +85,8 @@ const filterActiveUsers: FilterUser = (users) => {
     return filter
 }
 
+
+
 interface Book{
     title: string;
     author: string;
@@ -90,15 +97,12 @@ interface Book{
 type BookDetails = (book: Book) => void
 
 const printBookDetails: BookDetails = (book) => {
-    let bookData = ""
-    const keyVal = Object.keys(book);
-        
-    (keyVal as (keyof Book)[] ).forEach((data,index) => {
-    bookData += (`${data.toUpperCase()}: ${book[data]}${keyVal.length-1 === index? "" : ","} `)
-    })
 
+    let bookData = `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${book.isAvailable}`
     console.log(bookData);
+
 }
+
 
 
 type ArrData = (string | number)[]
@@ -115,12 +119,14 @@ const getUniqueValues: ArrayFunction = (array1, array2) => {
 
     })
     array2.forEach(data => {
-        if (!array1.includes(data)) {
+        if (!array1.includes(data) && !newArr.includes(data)) {
             newArr.push(data)
         }
     })
     return newArr
 }
+
+
 
 
 interface Product{
