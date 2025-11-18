@@ -5,19 +5,18 @@
 ## What is the use of enums in TypeScript? Provide an example of a numeric and string enum.
 -- 'enums' হচ্ছে টাইপস্ক্রিপ্ট এর এমন একটি টাইপ যার মাধ্যমে আমরা কোন ভ্যালুর টাইপ হিসেবে কিছু নির্দিষ্ট ভ্যালু বসিয়ে দিতে পারি এবং পরবর্তীতে ওই ভ্যালু গুলোই ব্যবহৃত হবে বিভিন্ন অপারেশন এর জন্য। যেমনঃ 
 
-        type PersonType = {
-        name: string;
-        mark: 10 | 9 | 8
-        }
-        const selectedPerson: PersonType = {
-            name: 'Sourav',
-            mark: 9
+        enum FavCar {
+            Audi = "Audi",
+            Toyota = "Toyota",
+            BMW = "BMW"
         }
 
-        type FavCar = {
-            name: 'Audi' | 'Toyota' | 'BMW'
+        const needCar: FavCar = FavCar.Audi
+
+        enum LuckyNumbers{
+            firstLucky = 15,
+            secondLucky = 20,
+            thirdLucky = 30
         }
 
-        const needCar: FavCar = {
-            name: "Audi"
-        }
+        const winner: LuckyNumbers = LuckyNumbers.firstLucky
